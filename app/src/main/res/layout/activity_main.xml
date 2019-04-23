@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="175dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/myreel"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/MyReel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="email "
+                    android:padding="10dp"
+                    android:layout_marginRight="75dp"
+                    android:layout_marginLeft="75dp"
+                    android:textStyle="bold"
+                    />
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="пароль"
+                        android:padding="10dp"
+                        android:layout_marginRight="75dp"
+                        android:layout_marginLeft="75dp"
+                        android:textStyle="bold"
+                        />
+
+            <Button
+                android:id="@+id/bt_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:text="войти"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:layout_marginRight="75dp"
+                android:layout_marginLeft="75dp"
+               android:background="@drawable/button"
+                />
+            <TextView
+                android:id="@+id/tv_toregistr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:padding="5dp"
+                android:text="Йоу, нет аккаунта? Летс регистрейшн"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

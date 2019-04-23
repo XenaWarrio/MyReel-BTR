@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "96042138829",
+    "firebase_url": "https://myreeltest.firebaseio.com",
+    "project_id": "myreeltest",
+    "storage_bucket": "myreeltest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96042138829:android:6c1d991017ef4aa0",
+        "android_client_info": {
+          "package_name": "dx.queen.myreeltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96042138829-a91ig96959sskpi891ckrlef8ouegvpc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dx.queen.myreeltest",
+            "certificate_hash": "1adc9f9e1e93733a4d7a84039d4912a519144ee1"
+          }
+        },
+        {
+          "client_id": "96042138829-hm6nt7kd6sql66kmb11q5k2cpt8t36s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvjYY5Y7pTswqGALEUiOHSbKVXrvn_04g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96042138829-hm6nt7kd6sql66kmb11q5k2cpt8t36s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
