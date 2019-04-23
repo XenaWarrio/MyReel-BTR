@@ -3,7 +3,6 @@ package dx.queen.myreeltest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -20,7 +19,7 @@ public class AddingPhotosActivity extends AppCompatActivity{
 
 
     ImageView imageCamera;
-    Button buttonSave;
+   Button buttonSave;
 
     Uri uriProfileImage;
 
@@ -28,25 +27,26 @@ public class AddingPhotosActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_photos);
-        imageCamera.findViewById(R.id.iv_camera);
-        buttonSave.findViewById(R.id.bt_save);
+
+        imageCamera = findViewById(R.id.iv_camera);
+        buttonSave = findViewById(R.id.bt_save);
 
         imageCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+
                     showImageChooser();
+
+            }
+        });
+
+            buttonSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
                 }
-            }
-        });
-
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-    }
+            });
+  }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
