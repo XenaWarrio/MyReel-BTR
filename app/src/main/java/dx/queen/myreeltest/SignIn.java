@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,6 +37,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.bt_sign_in).setOnClickListener(this);
+        findViewById(R.id.tv_toregistr).setOnClickListener(this);
 
     }
 
@@ -79,8 +81,13 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                       Toast.makeText(getApplicationContext(), "Поздравляю, ты теперь официально член нашей семьи!", Toast.LENGTH_SHORT)
                               .show();
                   }else{
-                      Toast.makeText(getApplicationContext(), "Тут что-то не так..", Toast.LENGTH_SHORT)
-                              .show();
+                      if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                          Toast.makeText(getApplicationContext() , "Ты УЖЕ  один  из нас",  Toast.LENGTH_SHORT)
+                                  .show();
+                      }else {
+                          Toast.makeText(getApplicationContext(), task.getException().getMessage() ,Toast.LENGTH_SHORT)
+                                  .show();
+                      }
                   }
               }
           });

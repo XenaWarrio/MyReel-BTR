@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    tools:context=".AddingPhotosActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нажми на профессиональную камеру, чтобы добавить фотАчек "
+        android:textAlignment="center"
+       android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+    <ImageView
+        android:id="@+id/iv_camera"
+        android:layout_width="190dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/camera"/>
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Сохранить"
+        android:textStyle="bold"
+        android:background="@color/MyReel"
+        android:textAllCaps="false"
+        android:paddingLeft="55dp"
+        android:paddingRight="55dp"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="165dp"
+        android:background="@drawable/forcameraactiviry"
+        android:layout_gravity="bottom" />
+
+</LinearLayout>
