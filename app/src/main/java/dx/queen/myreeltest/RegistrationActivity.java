@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class SignIn extends AppCompatActivity implements View.OnClickListener {
+public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etEmail;
     EditText etPassword;
@@ -78,6 +78,9 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
               public void onComplete(@NonNull Task<AuthResult> task) {
                   progressBar.setVisibility(View.GONE);
                   if(task.isSuccessful()){
+                      Intent intent  = new Intent(RegistrationActivity.this , AddingPhotosActivity.class);
+                      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                      startActivity(intent);
                       Toast.makeText(getApplicationContext(), "Поздравляю, ты теперь официально член нашей семьи!", Toast.LENGTH_SHORT)
                               .show();
                   }else{
