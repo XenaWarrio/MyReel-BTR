@@ -58,13 +58,15 @@ public class AddingPhotosActivity extends AppCompatActivity{
                     }
         });
 
-            buttonSave.setOnClickListener(new View.OnClickListener() {
+        buttonSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     saveUserInformation();
                 }
             });
+
   }
+
 
     private void saveUserInformation() {
         FirebaseUser user = auth.getCurrentUser();

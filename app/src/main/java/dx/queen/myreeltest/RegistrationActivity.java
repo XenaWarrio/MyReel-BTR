@@ -78,7 +78,9 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
               public void onComplete(@NonNull Task<AuthResult> task) {
                   progressBar.setVisibility(View.GONE);
                   if(task.isSuccessful()){
+                      finish();
                       Intent intent  = new Intent(RegistrationActivity.this , AddingPhotosActivity.class);
+                      startActivity(intent);
                       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                       startActivity(intent);
                       Toast.makeText(getApplicationContext(), "Поздравляю, ты теперь официально член нашей семьи!", Toast.LENGTH_SHORT)
@@ -104,6 +106,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                     break;
 
                 case R.id.tv_toregistr:
+                    finish();
                     startActivity(new Intent(this, MainActivity.class));
                     break;
             }
