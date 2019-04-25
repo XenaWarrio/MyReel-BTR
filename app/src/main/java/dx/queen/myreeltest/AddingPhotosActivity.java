@@ -62,6 +62,8 @@ public class AddingPhotosActivity extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     saveUserInformation();
+                  Intent intent = new Intent(AddingPhotosActivity.this ,ChooseSex.class );
+                   startActivity(intent);
                 }
             });
 

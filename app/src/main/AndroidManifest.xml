@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".AddingPhotosActivity"></activity>
+        <activity android:name=".AddingPhotosActivity" />
+        <activity android:name=".ChooseSex"></activity>
     </application>
 
 </manifest>
