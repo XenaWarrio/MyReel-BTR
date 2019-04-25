@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".AddingPhotosActivity" />
-        <activity android:name=".ChooseSex"></activity>
+        <activity android:name=".ChooseSex" />
+        <activity android:name=".AboutUser"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutUser"
+    android:background="@color/White">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="320dp"
+        android:layout_height="250dp"
+        android:background="@drawable/profileuser"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/MyReel">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Как тебя будут называть в MyReel?"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        />
+        <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Только без ругательств, мы не твои родственники."
+         android:textSize="12sp"
+         android:textStyle="italic"
+            android:layout_marginTop="5dp"        />
+       <EditText
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:hint = "sladkiyPirosjochek"
+           android:maxLength="25"
+           android:inputType="text"
+           android:layout_gravity="center"
+           android:textSize="15sp"
+
+           />
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сколько тебе лет?"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+
+             />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Если комплексуешь, можешь сказать сколько лет тебе было вчера.
+Только тссс.."
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:layout_marginTop="5dp"
+            />
+       <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint = "твои годики"
+        android:maxLength="2"
+        android:inputType="number"
+         android:layout_gravity="center"
+           android:textSize="15sp"
+
+
+           />
+        <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Расскажи нам о себе"
+         android:textStyle="bold"
+         android:textSize="15sp"
+           android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ТЫ - самая большая ценность этого приложения."
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ну и еще деньги, которых мы не получаем, потому что радовать тебя - уже зарплата.
+Не думай как мы кормим наших детей, просто расскажи о себе, бездушный ."
+            android:textSize="10sp"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            />
+          <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:hint = "твои золотые слова о таком золотом золоте , как ты , золотко"
+            android:maxLength="250"
+            android:inputType="text"
+              android:textSize="13dp"
+
+
+            />
+
+        <ImageButton
+            android:id="@+id/ib_further"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="115dp"
+            android:layout_height="75dp"
+            android:background="@drawable/strelkawithoutback" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
