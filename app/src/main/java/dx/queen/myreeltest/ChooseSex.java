@@ -26,7 +26,8 @@ public class ChooseSex extends AppCompatActivity {
         ibFurther.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(ChooseSex.this , )
+                Intent intent  = new Intent(ChooseSex.this , AboutUser.class);
+                startActivity(intent);
             }
     });
     }
