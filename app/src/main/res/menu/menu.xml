@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="menu.Menu"
+    >
+    <item
+        android:id="@+id/messeger"
+        android:orderInCategory="100"
+        android:title="Mesagging"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        android:title="Poisk"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/fqvorites"
+        android:orderInCategory="100"
+        android:title="Favoritiki"
+        app:showAsAction="never"/>
+
+
+</menu>

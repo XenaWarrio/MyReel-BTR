@@ -1,10 +1,11 @@
-package dx.queen.myreeltest;
+package regisrtation;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -15,6 +16,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import dx.queen.myreeltest.R;
 
 public class AboutUser extends AppCompatActivity {
     EditText etName;
@@ -32,7 +35,9 @@ public class AboutUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_about_user);
         etName = findViewById(R.id.et_name);
         etAge = findViewById(R.id.et_age);

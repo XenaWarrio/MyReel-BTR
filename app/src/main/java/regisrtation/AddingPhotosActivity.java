@@ -1,14 +1,18 @@
-package dx.queen.myreeltest;
+package regisrtation;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -27,9 +31,12 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 
+import dx.queen.myreeltest.R;
+
 public class AddingPhotosActivity extends AppCompatActivity{
 
-    private static final int PICK_IMAGE = 101 ;
+    private static final int PICK_IMAGE = 101;
+    private static final int PERMISSION_REQUEST_CODE = 111;
 
 
     ImageView imageCamera;
@@ -43,7 +50,10 @@ public class AddingPhotosActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_adding_photos);
         auth = FirebaseAuth.getInstance();
 
@@ -54,6 +64,9 @@ public class AddingPhotosActivity extends AppCompatActivity{
         imageCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE );
+                }
                 showImageChooser();
                     }
         });
@@ -142,4 +155,15 @@ public class AddingPhotosActivity extends AppCompatActivity{
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Выбери фотографию" ), PICK_IMAGE);
     }
+
+  @Override
+    public  void onRequestPermissionsResult(int requestCode , @NonNull String[] permissions , @NonNull int[] grantResults){
+        if (requestCode == PERMISSION_REQUEST_CODE)
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                showImageChooser();
+            else{
+                Toast.makeText(this, "Нам нужно разрешение, красавчик", Toast.LENGTH_SHORT).show();
+            }
+        super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+  }
 }

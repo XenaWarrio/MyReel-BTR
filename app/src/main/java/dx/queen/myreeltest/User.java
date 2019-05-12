@@ -4,6 +4,8 @@ import android.media.Image;
 
 import java.util.UUID;
 
+import regisrtation.AboutUser;
+
 public class User {
 
     final static  String  name = AboutUser.name;
