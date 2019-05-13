@@ -35,6 +35,7 @@ public class Menu extends AppCompatActivity {
 
                 return true;
             default:
-        return super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

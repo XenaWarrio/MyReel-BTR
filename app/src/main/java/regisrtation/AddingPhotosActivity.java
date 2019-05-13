@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +67,9 @@ public class AddingPhotosActivity extends AppCompatActivity{
             public void onClick(View v) {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
                     requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE );
+                    Intent myIntent = new Intent();
+                    myIntent.setAction(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+                    startActivity(myIntent);
                 }
                 showImageChooser();
                     }
@@ -165,5 +169,7 @@ public class AddingPhotosActivity extends AppCompatActivity{
                 Toast.makeText(this, "Нам нужно разрешение, красавчик", Toast.LENGTH_SHORT).show();
             }
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+
   }
+
 }
