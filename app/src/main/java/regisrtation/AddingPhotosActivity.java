@@ -48,6 +48,7 @@ public class AddingPhotosActivity extends AppCompatActivity{
     String imageUrl;
 
     FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class AddingPhotosActivity extends AppCompatActivity{
 
         setContentView(R.layout.activity_adding_photos);
         auth = FirebaseAuth.getInstance();
+         user = auth.getCurrentUser();
 
         imageCamera = findViewById(R.id.iv_camera);
         buttonSave = findViewById(R.id.bt_save);
@@ -88,7 +90,6 @@ public class AddingPhotosActivity extends AppCompatActivity{
 
 
     private void saveUserInformation() {
-        FirebaseUser user = auth.getCurrentUser();
         if(user != null && imageUrl != null) {
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setPhotoUri(Uri.parse(imageUrl))
@@ -125,8 +126,9 @@ public class AddingPhotosActivity extends AppCompatActivity{
     }
 
     private void uploadImageToFirebaseStorage() {
+        String nameImage = user.getUid();
         final StorageReference imageRef =
-                FirebaseStorage.getInstance().getReference("profilepics/"+ System.currentTimeMillis()+ ".jpg");
+                FirebaseStorage.getInstance().getReference("profilepics/"+ nameImage + ".jpg");
         if(uriProfileImage != null){
             progressBar.setVisibility(View.VISIBLE);
             imageRef.putFile(uriProfileImage)

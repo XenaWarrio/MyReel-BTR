@@ -12,15 +12,19 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 
 public class ProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
-
+    public static final String MESSAGE = "MESSAGE";
 
     TextView tvName;
     TextView tvSex;
@@ -34,7 +38,9 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     FirebaseFirestore db;
-
+    FirebaseAuth auth;
+    FirebaseStorage storage;
+    StorageReference storageReference;
 
 
     @Override
@@ -52,11 +58,36 @@ public class ProfileActivity extends AppCompatActivity {
         profilePhoto = findViewById(R.id.tv_image_profile);
 
         db = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
+        auth = FirebaseAuth.getInstance();
+        storage = FirebaseStorage.getInstance();
+
+
+        download();
         readData();
     }
 
 
 
+    public void download(){
+        FirebaseUser user = auth.getCurrentUser();
+        String nameImage = user.getUid();
+        Log.d(MESSAGE , "USER IS " + user.toString());
+
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://myreeltest.appspot.com");
+        Log.d(MESSAGE ,"URL" + storageRef.toString());
+        StorageReference pathReference = storageRef.child("profilepics/"+ nameImage + ".jpg");
+        Log.d(MESSAGE , "PATH IS" +pathReference.toString());
+
+       GlideApp.with(this)
+             .load(pathReference)
+               .centerCrop()
+             .into(profilePhoto);
+
+
+
+
+    }
 
     public void readData() {
         DocumentReference user = db.collection("users").document("user");
@@ -89,6 +120,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
+    public  void downloadImage(){
+
+    }
 
 
     }
