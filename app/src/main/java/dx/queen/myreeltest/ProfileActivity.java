@@ -40,7 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseFirestore db;
     FirebaseAuth auth;
     FirebaseStorage storage;
-    StorageReference storageReference;
+    StorageReference storageRef;
+    FirebaseUser user;
 
 
     @Override
@@ -58,34 +59,29 @@ public class ProfileActivity extends AppCompatActivity {
         profilePhoto = findViewById(R.id.tv_image_profile);
 
         db = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
 
 
         download();
         readData();
+
     }
 
-
-
-    public void download(){
-        FirebaseUser user = auth.getCurrentUser();
+    public void download() {
+        user = auth.getCurrentUser();
         String nameImage = user.getUid();
-        Log.d(MESSAGE , "USER IS " + user.toString());
+        Log.d(MESSAGE, "USER IS " + user.toString());
 
-        StorageReference storageRef = storage.getReferenceFromUrl("gs://myreeltest.appspot.com");
-        Log.d(MESSAGE ,"URL" + storageRef.toString());
-        StorageReference pathReference = storageRef.child("profilepics/"+ nameImage + ".jpg");
-        Log.d(MESSAGE , "PATH IS" +pathReference.toString());
+        storageRef = storage.getReferenceFromUrl("gs://myreeltest.appspot.com");
+        Log.d(MESSAGE, "URL" + storageRef.toString());
+        StorageReference pathReference = storageRef.child("profilepics/" + nameImage + ".jpg");
+        Log.d(MESSAGE, "PATH IS" + pathReference.toString());
 
-       GlideApp.with(this)
-             .load(pathReference)
-               .centerCrop()
-             .into(profilePhoto);
-
-
-
+        GlideApp.with(this)
+                .load(pathReference)
+                .centerCrop()
+                .into(profilePhoto);
 
     }
 
@@ -120,9 +116,4 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-    public  void downloadImage(){
-
-    }
-
-
-    }
+}

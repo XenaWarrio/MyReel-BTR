@@ -48,6 +48,7 @@
            android:inputType="text"
            android:layout_gravity="center"
            android:textSize="15sp"
+           android:textColor="@color/BlackGreen"
 
            />
          <TextView
@@ -77,7 +78,9 @@
         android:maxLength="2"
         android:inputType="number"
          android:layout_gravity="center"
-           android:textSize="15sp"
+       android:textSize="15sp"
+       android:textColor="@color/BlackGreen"
+
 
 
            />
@@ -116,9 +119,11 @@
             android:maxLength="250"
             android:inputType="text"
               android:textSize="13dp"
+              android:textColor="@color/BlackGreen"
 
 
-            />
+
+              />
 
         <ImageButton
             android:id="@+id/ib_further"

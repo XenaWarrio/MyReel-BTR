@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import dx.queen.myreeltest.Menu;
 import dx.queen.myreeltest.R;
 import regisrtation.AddingPhotosActivity;
 import regisrtation.RegistrationActivity;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     finish();
-                    Intent intent  = new Intent(MainActivity.this , AddingPhotosActivity.class);
+                    Intent intent  = new Intent(MainActivity.this ,Menu.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     

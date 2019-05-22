@@ -12,13 +12,12 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import dx.queen.myreeltest.ProfileActivity;
+import dx.queen.myreeltest.Menu;
 import dx.queen.myreeltest.R;
 
 public class AboutUser extends AppCompatActivity {
@@ -32,6 +31,7 @@ public class AboutUser extends AppCompatActivity {
 
 
     ImageButton ib_Further;
+
 
     FirebaseFirestore db;
     Map<String , Object> user;
@@ -76,7 +76,7 @@ public class AboutUser extends AppCompatActivity {
 
                 }
                 addData();
-                Intent intent =  new Intent(AboutUser.this , ProfileActivity.class);
+                Intent intent =  new Intent(AboutUser.this ,Menu.class);
                 startActivity(intent);
             }
         });
@@ -95,13 +95,8 @@ public class AboutUser extends AppCompatActivity {
         user.put("sex" , ChooseSex.sex);
 
         db.collection("users").document("user").set(user)
-                .addOnSuccessListener(new OnSuccessListener < Void > () {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(AboutUser.this, "Всё ок!",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                })
+                .addOnSuccessListener(aVoid -> Toast.makeText(AboutUser.this, "Всё ок!",
+                        Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {

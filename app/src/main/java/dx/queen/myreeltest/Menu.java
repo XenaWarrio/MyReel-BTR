@@ -1,10 +1,11 @@
-package menu;
+package dx.queen.myreeltest;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import dx.queen.myreeltest.R;
+import search.Search;
 
 public class Menu extends AppCompatActivity {
 
@@ -25,17 +26,28 @@ public class Menu extends AppCompatActivity {
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.messeger:
+            case R.id.profile:
+                intentFunc(ProfileActivity.class);
+                return true;
+            case R.id.messenger:
 
                 return true;
             case R.id.search:
+                intentFunc(Search.class);
+                return true;
+            case R.id.favorite:
 
                 return true;
-            case R.id.fqvorites:
 
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+    }
+
+    private void  intentFunc (Class classy){
+        Intent intent  =  new Intent(Menu.this,classy);
+        startActivity(intent);
     }
 }
+

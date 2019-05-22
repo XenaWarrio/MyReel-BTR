@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="android:textColorPrimary">@color/MyReel</item>
+    <item name="android:textColorSecondary">@color/MyReel</item>
+    <item name="android:textColor">@color/BlackGreen</item>
+</style>`
+</resources>
