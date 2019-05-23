@@ -37,11 +37,14 @@ public class ProfileActivity extends AppCompatActivity {
     String about;
 
 
+
     FirebaseFirestore db;
     FirebaseAuth auth;
     FirebaseStorage storage;
     StorageReference storageRef;
     FirebaseUser user;
+
+
 
 
     @Override
@@ -78,10 +81,10 @@ public class ProfileActivity extends AppCompatActivity {
         StorageReference pathReference = storageRef.child("profilepics/" + nameImage + ".jpg");
         Log.d(MESSAGE, "PATH IS" + pathReference.toString());
 
-        GlideApp.with(this)
-                .load(pathReference)
-                .centerCrop()
-                .into(profilePhoto);
+//        GlideApp.with(this)
+//                .load(pathReference)
+//                .centerCrop()
+//                .into(profilePhoto);
 
     }
 

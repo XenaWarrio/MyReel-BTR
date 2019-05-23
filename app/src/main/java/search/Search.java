@@ -32,6 +32,7 @@ public class Search extends AppCompatActivity implements IFirebaseLoad  {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
@@ -48,6 +49,7 @@ public class Search extends AppCompatActivity implements IFirebaseLoad  {
         //init event
 
         listener = this;
+
 
         people = FirebaseFirestore.getInstance().collection("users");
 

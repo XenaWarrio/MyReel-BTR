@@ -40,7 +40,7 @@ public class AddingPhotosActivity extends AppCompatActivity{
     private static final int PERMISSION_REQUEST_CODE = 111;
 
 
-    ImageView imageCamera;
+   ImageView imageCamera;
    Button buttonSave;
    ProgressBar  progressBar;
 
@@ -83,8 +83,10 @@ public class AddingPhotosActivity extends AppCompatActivity{
                     saveUserInformation();
                   Intent intent = new Intent(AddingPhotosActivity.this ,ChooseSex.class );
                    startActivity(intent);
+
                 }
             });
+
 
   }
 

@@ -62,7 +62,7 @@ public class MyAdapter extends PagerAdapter {
         Picasso.get().load(personList.get(position).getImage()).into(personPhoto);
 
         personName.setText(personList.get(position).getName());
-        personDescription.setText(personList.get(position).getDescription());
+        personDescription.setText(personList.get(position).getAboutUser());
 
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override

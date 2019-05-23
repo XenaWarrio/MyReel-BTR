@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import Message.MainMessenger;
 import search.Search;
 
 public class Menu extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class Menu extends AppCompatActivity {
                 intentFunc(ProfileActivity.class);
                 return true;
             case R.id.messenger:
-
+                intentFunc(MainMessenger.class);
                 return true;
             case R.id.search:
                 intentFunc(Search.class);

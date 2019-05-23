@@ -26,7 +26,8 @@
         <activity android:name="menu.Menu" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Menu" />
-        <activity android:name="search.Search"></activity>
+        <activity android:name="search.Search" />
+        <activity android:name="Message.MainMessenger"></activity>
     </application>
 
 </manifest>
